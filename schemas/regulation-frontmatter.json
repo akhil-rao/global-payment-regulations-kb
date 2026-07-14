@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Regulation Frontmatter Schema",
+  "description": "Validates the YAML front matter of all regulation markdown files.",
+  "type": "object",
+  "properties": {
+    "title": { "type": "string", "description": "Official name of the regulation" },
+    "country": { "type": "string", "description": "Jurisdiction" },
+    "regulator": { "type": "string", "description": "Issuing authority" },
+    "category": { "type": "string", "description": "e.g., Primary Legislation, Guideline, Notice" },
+    "status": { 
+      "type": "string", 
+      "enum": ["Active", "Draft", "Repealed", "Consultation"],
+      "description": "Current legal status" 
+    },
+    "effective_date": { "type": "string", "format": "date", "description": "YYYY-MM-DD" },
+    "last_updated": { "type": "string", "format": "date", "description": "YYYY-MM-DD" },
+    "topics": { "type": "array", "items": { "type": "string" } },
+    "payment_systems": { "type": "array", "items": { "type": "string" } },
+    "tags": { "type": "array", "items": { "type": "string" } }
+  },
+  "required": ["title", "country", "regulator", "category", "status", "effective_date", "last_updated", "topics", "tags"]
+}
