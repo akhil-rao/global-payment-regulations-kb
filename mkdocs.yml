@@ -1,0 +1,46 @@
+site_name: Global Payment Regulations Knowledge Base
+site_description: The world's most comprehensive, structured, open-source knowledge base for global payment regulations.
+site_author: Payment Labs
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: README.md
+  - Browse by Country:
+    - Overview: countries/README.md
+  - Browse by Regulator:
+    - Overview: regulators/README.md
+  - Browse by Topic:
+    - Overview: topics/README.md
+  - Community:
+    - Contributing: CONTRIBUTING.md
+    - Changelog: CHANGELOG.md
