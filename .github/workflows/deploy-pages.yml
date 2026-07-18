@@ -12,7 +12,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -20,26 +20,14 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Verify mkdocs.yml exists
-        run: |
-          echo "Checking for mkdocs.yml..."
-          ls -la
-          if [ -f mkdocs.yml ]; then
-            echo "✓ mkdocs.yml found"
-          else
-            echo "✗ mkdocs.yml NOT found"
-            exit 1
-          fi
-
       - name: Install MkDocs Material
-        run: |
-          pip install --upgrade pip
-          pip install mkdocs-material
-          pip list | grep mkdocs
+        run: pip install mkdocs-material
 
-      - name: Build and deploy
-        run: |
-          echo "Building site..."
-          mkdocs build --verbose
-          echo "Deploying to GitHub Pages..."
-          mkdocs gh-deploy --force --verbose
+      - name: Build the website
+        run: mkdocs build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
