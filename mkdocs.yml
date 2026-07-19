@@ -35,11 +35,17 @@ markdown_extensions:
 
 nav:
   - Home: README.md
-  - Browse by Country:
+  - Countries:
     - Overview: countries/README.md
-  - Browse by Regulator:
+    - Singapore:
+      - Overview: countries/singapore/README.md
+      - Payment Services Act: countries/singapore/payment-services-act.md
+    - United Kingdom:
+      - Overview: countries/united-kingdom/README.md
+      - Payment Services Regulations 2017: countries/united-kingdom/payment-services-regulations-2017.md
+  - Regulators:
     - Overview: regulators/README.md
-  - Browse by Topic:
+  - Topics:
     - Overview: topics/README.md
   - Community:
     - Contributing: CONTRIBUTING.md
