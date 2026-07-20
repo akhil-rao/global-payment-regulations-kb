@@ -1,4 +1,5 @@
 site_name: Global Payment Regulations Knowledge Base
+docs_dir: .
 site_description: The world's most comprehensive, structured, open-source knowledge base for global payment regulations.
 site_author: Payment Labs
 
